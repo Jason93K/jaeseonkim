@@ -38,7 +38,7 @@ resume_section_online_coursework: true
 # Resume social links
 # uncomment the options you wish to display, and add your own URL
 resume_social_links:
-  resume_github_url:            "https://jaehee0113.github.io"
+  resume_github_url:            "https://github.com/jaehee0113"
   resume_google_scholar_url:    "https://scholar.google.com/citations?hl=en&user=e0MzU20AAAAJ"
   # resume_twitter_url:           "http://twitter.com/jglovier"
   # resume_dribbble_url:          "https://dribbble.com/jag"
