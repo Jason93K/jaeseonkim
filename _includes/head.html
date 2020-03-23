@@ -16,3 +16,220 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <!--<link rel="icon" type="image/x-icon" href="/favicon.png" />-->
 </head>
+
+<script type="text/javascript">
+var slideIndex = 1;
+var slideProject1Index = 1;
+var slideProject2Index = 1;
+var slideProject3Index = 1;
+var slideProject4Index = 1;
+
+var slidePaper1Index = 1;
+var slidePaper2Index = 1;
+// Next/previous controls
+
+
+function firstImageShow() {
+	var first = document.getElementsByClassName("first");
+	for (i = 0; i < first.length++; i++) {
+		first[i].style.display = "block";
+	}
+	autoShowProject1Slides();
+	autoShowProject2Slides();
+	autoShowProject3Slides();
+	autoShowProject4Slides();
+
+	autoShowPaper1Slides();
+	autoShowPaper2Slides();
+}
+
+setTimeout(firstImageShow, 100);
+
+
+// Thumbnail image controls
+function currentProject1Slide(n) {
+  showSlides("myProject1", slideProject1Index = n);
+}
+
+function plusProject1Slides(n) {
+  showSlides("myProject1", slideProject1Index += n);
+}
+
+// Thumbnail image controls
+function currentProject2Slide(n) {
+  showSlides("myProject2", slideProject2Index = n);
+}
+function plusProject2Slides(n) {
+  showSlides("myProject2", slideProject2Index += n);
+}
+
+// Thumbnail image controls
+function currentProject3Slide(n) {
+  showSlides("myProject3", slideProject3Index = n);
+}
+function plusProject3Slides(n) {
+  showSlides("myProject3", slideProject3Index += n);
+}
+
+// Thumbnail image controls
+function currentProject4Slide(n) {
+  showSlides("myProject4", slideProject4Index = n);
+}
+function plusProject4Slides(n) {
+  showSlides("myProject4", slideProject4Index += n);
+}
+
+// Thumbnail image controls
+function currentPaper1Slide(n) {
+  showSlides("myPaper1", slidePaper1Index = n);
+}
+
+function plusPaper1Slides(n) {
+  showSlides("myPaper1", slidePaper1Index += n);
+}
+
+// Thumbnail image controls
+function currentPaper2Slide(n) {
+  showSlides("myPaper2", slidePaper2Index = n);
+}
+
+function plusPaper2Slides(n) {
+  showSlides("myPaper2", slidePaper2Index += n);
+}
+
+
+function showSlides(classname, n) {
+  var i;
+  var slides = document.getElementsByClassName(classname);
+  var dots = document.getElementsByClassName(classname+"-dot");
+  if (classname == 'myProject1') {
+	  slideIndex = slideProject1Index;
+  }else if (classname == 'myProject2') {
+	  slideIndex = slideProject2Index;
+  }else if (classname == 'myProject3') {
+	  slideIndex = slideProject3Index;
+  }else if (classname == 'myProject4'){
+      slideIndex = slideProject4Index;
+  }else if (classname == 'myPaper1'){
+      slideIndex = slidePaper1Index;
+  }else {
+      slideIndex = slidePaper2Index;
+  }
+
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+function autoShowProject1Slides() {
+	var i;
+	var slides = document.getElementsByClassName("myProject1");
+	var dots = document.getElementsByClassName("myProject1-dot");
+	for (i = 0; i < slides.length; i++) {
+	  slides[i].style.display = "none";
+	}
+  	for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+ 	}
+	if (slideProject1Index > slides.length) {slideProject1Index = 1}
+	slides[slideProject1Index-1].style.display = "block";
+	dots[slideProject1Index-1].className += " active";
+	slideProject1Index++;
+	setTimeout(autoShowProject1Slides, 3500); // Change image every 2.5 seconds
+}
+
+function autoShowProject2Slides() {
+	var i;
+	var slides = document.getElementsByClassName("myProject2");
+	var dots = document.getElementsByClassName("myProject2-dot");
+	for (i = 0; i < slides.length; i++) {
+	  slides[i].style.display = "none";
+	}
+  	for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+ 	}
+	if (slideProject2Index > slides.length) {slideProject2Index = 1}
+	slides[slideProject2Index-1].style.display = "block";
+	dots[slideProject2Index-1].className += " active";
+	slideProject2Index++;
+	setTimeout(autoShowProject2Slides, 3500); // Change image every 2.5 seconds
+}
+
+function autoShowProject3Slides() {
+	var i;
+	var slides = document.getElementsByClassName("myProject3");
+	var dots = document.getElementsByClassName("myProject3-dot");
+	for (i = 0; i < slides.length; i++) {
+	  slides[i].style.display = "none";
+	}
+  	for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+ 	}
+	if (slideProject3Index > slides.length) {slideProject3Index = 1}
+	slides[slideProject3Index-1].style.display = "block";
+	dots[slideProject3Index-1].className += " active";
+	slideProject3Index++;
+	setTimeout(autoShowProject3Slides, 3500); // Change image every 2.5 seconds
+}
+
+function autoShowProject4Slides() {
+	var i;
+	var slides = document.getElementsByClassName("myProject4");
+	var dots = document.getElementsByClassName("myProject4-dot");
+	for (i = 0; i < slides.length; i++) {
+	  slides[i].style.display = "none";
+	}
+  	for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+ 	}
+	if (slideProject4Index > slides.length) {slideProject4Index = 1}
+	slides[slideProject4Index-1].style.display = "block";
+	dots[slideProject4Index-1].className += " active";
+	slideProject4Index++;
+	setTimeout(autoShowProject4Slides, 3500); // Change image every 2.5 seconds
+}
+
+function autoShowPaper1Slides() {
+	var i;
+	var slides = document.getElementsByClassName("myPaper1");
+	var dots = document.getElementsByClassName("myPaper1-dot");
+	for (i = 0; i < slides.length; i++) {
+	  slides[i].style.display = "none";
+	}
+  	for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+ 	}
+	if (slidePaper1Index > slides.length) {slidePaper1Index = 1}
+	slides[slidePaper1Index-1].style.display = "block";
+	dots[slidePaper1Index-1].className += " active";
+	slidePaper1Index++;
+	setTimeout(autoShowPaper1Slides, 3500); // Change image every 2.5 seconds
+}
+
+function autoShowPaper2Slides() {
+	var i;
+	var slides = document.getElementsByClassName("myPaper2");
+	var dots = document.getElementsByClassName("myPaper2-dot");
+	for (i = 0; i < slides.length; i++) {
+	  slides[i].style.display = "none";
+	}
+  	for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+ 	}
+	if (slidePaper2Index > slides.length) {slidePaper2Index = 1}
+	slides[slidePaper2Index-1].style.display = "block";
+	dots[slidePaper2Index-1].className += " active";
+	slidePaper2Index++;
+	setTimeout(autoShowPaper2Slides, 3500); // Change image every 2.5 seconds
+}
+
+
+
+</script>

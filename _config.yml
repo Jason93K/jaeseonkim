@@ -1,5 +1,5 @@
 # Site settings
-title: "Jae Hee Lee"
+title: "Jaeseon Kim"
 description: "A resume template for Jekyll and GitHub Pages sites."
 
 # Build settings
@@ -9,44 +9,46 @@ sass:
   style: compressed
 
 # Resume settings
-resume_avatar:                  "false"
-resume_name:                    "Jae Hee Lee"
-resume_title:                   "Technology Graduate"
-resume_contact_email:           "jaeheelee0113@gmail.com"
-resume_header_location:         "Canberra, ACT"
-resume_header_phone:            "0468 361 554"
+resume_avatar:                  "true"
+resume_name:                    "김재선"
+resume_name_ENG:                "Jaeseon Kim"
+resume_title:                   "Computer Vision & AI Researcher"
+resume_contact_email:           "jason93ek@gmail.com"
+resume_header_location:         "Yongin, Korea"
+resume_header_phone:            "+82 10-9148-8767"
 
 # use "yes" to display the email contact button,
 # "no" to display an "I'm not looking for work" message,
 # or remove the resume_looking_for_work option entirely
 # to leave blank
-resume_looking_for_work:        "no"
+resume_looking_for_work:        "yes"
 
 # Decide which sections to use
 # comment out to hide
-resume_section_experience:      true
+resume_section_experience:      false
+resume_section_teaching_experience:      true
 resume_section_education:       true
-resume_section_projects:        false
+resume_section_projects:        true
 resume_section_research:        true
 resume_section_publications:        true
 resume_section_skills:          true
 resume_section_recognition:     true
 # resume_section_links:           true
-resume_section_associations:    false # certifications
-resume_section_online_coursework: true
+#resume_section_associations:    false # certifications
+#resume_section_online_coursework: false
 
 # Resume social links
 # uncomment the options you wish to display, and add your own URL
 resume_social_links:
-  resume_github_url:            "https://github.com/jaehee0113"
-  resume_google_scholar_url:    "https://scholar.google.com/citations?hl=en&user=e0MzU20AAAAJ"
-  # resume_twitter_url:           "http://twitter.com/jglovier"
-  # resume_dribbble_url:          "https://dribbble.com/jag"
+  resume_github_url:            "https://github.com/Jason93K"
+  #resume_google_scholar_url:    ""
+  # resume_twitter_url:           ""
+  # resume_dribbble_url:          ""
   # resume_facebook_url:          "insert Facebook URL here"
-  resume_linkedin_url:          "https://www.linkedin.com/in/jaehee0113"
-  resume_pdf_url:               "https://jaehee0113.github.io/images/cv.pdf"
+  resume_linkedin_url:          "https://www.linkedin.com/in/kimjaeseon/"
+  #resume_pdf_url:               ""
   # resume_instagram_url:         "insert your Instagram URL here"
-  # resume_website_url:           "http://joelglovier.com"
+  # resume_website_url:           ""
 resume_print_social_links:      true
 
 # Design settings

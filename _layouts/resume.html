@@ -13,18 +13,17 @@
 
         <!-- You can turn off the avatar in _config.yml by setting to false -->
         {% if site.resume_avatar == 'true' %}
-        <img src="images/resume.pdf" alt="my photo" class="avatar no-print" itemprop="image">
+        <img src="images/avatar.jpg" alt="my photo" class="avatar no-print" itemprop="image">
         {% endif %}
 
         <!-- Your name is defined in the _config.yml file -->
         <h1 class="header-name" itemprop="name">{{ site.resume_name }}</h1>
+        <h2 class="header-name_eng" itemprop="name">{{ site.resume_name_ENG }}</h2>
 
         <!-- Contact buttons don't work in print, configure in the _config.yml file, remove "print-only" to display always. -->
         <div class="header-contact-info" itemprop="contact-info">
-          <p><a style="text-decoration:none;" href="https://www.google.com/maps/place/Cedar+Rapids,+IA" target="_blank">{{ site.resume_header_location }}</a> | <a style="text-decoration:none;" href="tel:{{ site.resume_header_phone}}">{{ site.resume_header_phone }} </a> | <a style="text-decoration:none;" href="mailto:{{ site.resume_contact_email }}">{{ site.resume_contact_email }}</a></p>
+          <p><a style="text-decoration:none;" href="https://goo.gl/maps/muKa9JajMEtkQS588" target="_blank">{{ site.resume_header_location }}</a> | <a style="text-decoration:none;" href="tel:{{ site.resume_header_phone}}">{{ site.resume_header_phone }} </a> | <a style="text-decoration:none;" href="mailto:{{ site.resume_contact_email }}">{{ site.resume_contact_email }}</a></p>
         </div>
-
-
 
         <div class="title-bar no-print">
 
@@ -36,17 +35,21 @@
         </div>
 
         <div class="executive-summary no-print" itemprop="description">
-          <p>Has extensive work experience in IT industry with demonstrable and quantified result.</p>
-
-          <p><b><u>News</u></b></p>
-          <p> After a successful completion of my internship at IBM, I will be joining BHP as a technology graduate in Brisbane, QLD in 2020! I would like to thank everyone who has supported me.</p>
+          <ul class="resume-item-list">
+          <p>
+            <li>A self-motivated computer vision and AI researcher who is fascinated by computer vision algorithms based on deep learning.</li>
+            <li>He is currently pursuing the Master's degree in electrical and computer engineering at Ajou University, Suwon, Korea.</li>
+            <li>He has participated in many research projects to develop <i>state-of-the-art</i> computer vision algorithms.</li>
+            <li>His current research topic covers <b><i>Deep Learning</i></b>, <b><i>Computer Vision</i></b>, <b><i>Semantic Segmentation</i></b>, <b><i>Efficient CNN</i></b>.</li>
+            <!-- <b><i>Model Confidence Calibration</i></b> -->
+          </p>
+          </ul>
+          <!--<p>A self-motivated computer vision researcher</p>-->
+          <!--<p>Current research topic covers </p>-->
         </div>
 
         {% if site.resume_looking_for_work == 'yes' %}
-        <div style="width: 100%; overflow: hidden;">
-          <div style="width: 300px; float: left;"> <a href="mailto:{{ site.resume_contact_email }}" class="contact-button no-print" itemprop="email">Contact me</a> </div>
-          <div style="margin-left: 320px;"> <a href="images/resume.pdf" download="andy_boutte_resume" class="contact-button no-print" itemprop="email">Download Resume</a> </div>
-        </div>
+          <a href="mailto:{{ site.resume_contact_email }}" class="contact-button no-print" itemprop="email">Contact me</a>
 
 
         {% elsif site.resume_looking_for_work == 'no' %}
@@ -65,134 +68,25 @@
         </header>
 
         <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
-          <h3 class="resume-item-title" itemprop="name">The Australian National University (ANU) <img src = "images/icons8-australia-96.png"
-         alt = "Canberra" width= "20px" height="20px"/> </h3>
-          <h4 class="resume-item-details" itemprop="description">Bachelor of Laws and Information Technology &bull; 2010 &mdash; 2019</h4>
-          <p class="resume-item-copy">Discontinued law degree in 2019 to focus on my IT career.</p>
+          <h3 class="resume-item-title" itemprop="name"><a href="http://www.ajou.ac.kr/main/index.jsp">Ajou University (아주대학교) <img src = "images/icons8-south-korea-96.png"
+         alt = "Suwon" width= "20px" height="20px"/></a></h3>
+          <h4 class="resume-item-details" itemprop="description">Master of Electrical and Computer Engineering &bull; 2018 &mdash; 2020 (Expected) </h4>
+           <!--<p class="resume-item-copy">Study Deep Learning and Computer Vision</p>-->
+          <p class="resume-item-copy">Conducted research about deep learning based computer vision with his advisor <a href="https://sites.google.com/site/ajoumspl/professor"><b>Prof. Yong Seok Heo</b></a> in the <a href="https://sites.google.com/site/ajoumspl/home"><b>Multimedia Signal Processing Lab</b></a>.</p>
         </div>
 
-         <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
-          <h3 class="resume-item-title" itemprop="name">Goyang Foreign Language High School (고양외국어고등학교) <img src = "images/icons8-south-korea-96.png"
-         alt = "Goyang" width= "20px" height="20px"/></h3>
-          <h4 class="resume-item-details" itemprop="description">English major and Chinese minor &bull; 2006 &mdash; 2009 </h4>
-          <p class="resume-item-copy">Selective high school in South Korea.</p>
+        <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
+          <h3 class="resume-item-title" itemprop="name"><a href="http://www.ajou.ac.kr/main/index.jsp">Ajou University (아주대학교) <img src = "images/icons8-south-korea-96.png"
+         alt = "Suwon" width= "20px" height="20px"/></a></h3>
+          <h4 class="resume-item-details" itemprop="description">Bachelor of Electrical and Computer Engineering &bull; 2012 &mdash; 2018</h4>
         </div>
 
       </section>
       <!-- end Education -->
       {% endif %}
 
-
-      {% if site.resume_section_experience %}
-      <!-- begin Experience -->
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2>Work Experience</h2>
-        </header>
-
-        <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-          <h3 class="resume-item-title" itemprop="name"><a href="https://www.bhp.com">BHP <img src = "images/icons8-australia-96.png"
-         alt = "Brisbane" width= "20px" height="20px"/></a></h3>
-          <h4 class="resume-item-details" itemprop="description">Technology Graduate &bull; Feb 2020</h4>
-          <ul class="resume-item-list">
-            <li>2020 BHP Graduate Program cohort.</li>
-          </ul>
-        </div>
-
-        <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-          <h3 class="resume-item-title" itemprop="name"><a href="https://www.ibm.com">IBM <img src = "images/icons8-australia-96.png"
-         alt = "Sydney" width= "20px" height="20px"/></a></h3>
-          <h4 class="resume-item-details" itemprop="description">Cognos Analytics Support Analyst Intern  &bull; Dec 2018 - Dec 2019</h4>
-          <ul class="resume-item-list">
-            <li>Provided technical support for IBM Cognos Analytics clients.</li>
-            <li>Achieved an NPS score of 80/100 and 9.6/10.0 (checked on my last day at IBM)</li>
-          </ul>
-        </div>
-
-        <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-          <h3 class="resume-item-title" itemprop="name"><a href="https://www.anu.edu.au">ANU <img src = "images/icons8-australia-96.png"
-         alt = "Canberra" width= "20px" height="20px"/></a></h3>
-          <h4 class="resume-item-details" itemprop="description">Tutor (COMP7230 and COMP3425/8410)  &bull; Feb 2018 - Oct 2019</h4>
-          <ul class="resume-item-list">
-            <li>Ran tutorials and workshops both offline and online.</li>
-            <li>Taught a class that obtained the highest score and 0% failure rate in the exam.</li>
-          </ul>
-        </div>
-
-         <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-          <h3 class="resume-item-title" itemprop="name"><a href="https://www.ey.com">Ernst & Young (formerly Adelphi Digital) <img src = "images/icons8-australia-96.png"
-         alt = "Sydney" width= "20px" height="20px"/> <img src = "images/icons8-singapore-96.png"
-         alt = "Singapore" width= "20px" height="20px"/></a></h3>
-          <h4 class="resume-item-details" itemprop="description">Technical Developer &bull; Oct 2016 - Sep 2017</h4>
-          <ul class="resume-item-list">
-            <li>Interacted with clients to manage user requirements and issues.</li>
-            <li>Developed and maintained popular web applications including Opal NSW, a website being used by thousands of people on a daily basis.</li>
-          </ul>
-        </div>
-
-        <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-          <h3 class="resume-item-title" itemprop="name"><a href="http://www.xinics.com">Xinics (in lieu of military service) <img src = "images/icons8-south-korea-96.png"
-         alt = "Seoul" width= "20px" height="20px"/> </a> </h3>
-          <h4 class="resume-item-details" itemprop="description">Software Engineer &bull; Aug 2014 - Nov 2015</h4>
-          <ul class="resume-item-list">
-            <li>Developed web-based e-learning services including 'Open Learning Community,' a product being used by universities in Korea and Japan.</li>
-            <li> Led a team to develop a popular Korean MOOC service called 'imoove' using scrum.</li>
-          </ul>
-        </div>
-
-        <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-          <h3 class="resume-item-title" itemprop="name"><a href="http://www.cyram.com">CYRAM (in lieu of military service) <img src = "images/icons8-south-korea-96.png"
-         alt = "Seoul" width= "20px" height="20px"/></a> </h3>
-          <h4 class="resume-item-details" itemprop="description"> Data Science Engineer &bull; Sep 2013 - Aug 2014</h4>
-          <ul class="resume-item-list">
-            <li>Devised a semantic social network analysis algorithm via developing a prototype to implement the algorithm to NetMiner, a social network analysis software.</li>
-        </div>
-
-        <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-          <h3 class="resume-item-title" itemprop="name"><a href="https://www.google.com">Google <img src = "images/icons8-australia-96.png"
-         alt = "Sydney" width= "20px" height="20px"/>  </a></h3>
-          <h4 class="resume-item-details" itemprop="description"> Ambassador &bull; Feb 2012 - Sep 2013</h4>
-          <ul class="resume-item-list">
-            <li>Worked as a liaison between ANU and Google through organising 9 events.</li>
-            <li>Encouraged ANU to use Google products including the installation of Chrome browser on computers and the use of Google Map for Inward Bound tracking.</li>
-        </div>
-      </section>
-      <!-- end Experience -->
-      {% endif %}
-
-       {% if site.resume_section_research %}
-      <!-- begin Experience -->
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2>Research Experience</h2>
-        </header>
-
-        <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-          <h3 class="resume-item-title" itemprop="name"><a href="http://cm.cecs.anu.edu.au/">ANU Computational Media Laboratory <img src = "images/icons8-australia-96.png"
-         alt = "Canberra" width= "20px" height="20px"/> </a></h3>
-          <h4 class="resume-item-details" itemprop="description">Research Intern &bull; Nov 2017 - Jan 2018</h4>
-          <ul class="resume-item-list">
-            <li>Devised and implemented methods to extract entities-relation triples with their canonical forms from multimedia sources to construct a multimedia knowledge graph.</li>
-          </ul>
-        </div>
-
-        <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-          <h3 class="resume-item-title" itemprop="name"><a href="https://data61.csiro.au/">Data 61, CSIRO (formerly NICTA)<img src = "images/icons8-australia-96.png"
-         alt = "Sydney" width= "20px" height="20px"/> </a></h3>
-          <h4 class="resume-item-details" itemprop="description">Research Intern  &bull; Nov 2012 - Feb 2013</h4>
-          <ul class="resume-item-list">
-            <li>Developed an editor enhancing the legibility of CapArch, an architecture description language developed by Data61 researchers.</li>
-          </ul>
-        </div>
-
-      </section>
-      <!-- end Experience -->
-      {% endif %}
-
       {% if site.resume_section_publications %}
-      <!-- begin Experience -->
+      <!-- begin Publications -->
       <section class="content-section">
 
         <header class="section-header">
@@ -200,55 +94,437 @@
         </header>
 
         <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-          <p class="resume-item-copy">
-            <i><a href="http://cm.cecs.anu.edu.au/documents/shin_wsdm2019_demo.pdf">Visualizing Graph Differences from Social Media Streams</a></i>
-            <br/>
-            Minjeong Shin, Dongwoo Kim, <u>Jae Hee Lee</u>, Umanga Bista, Lexing Xie
-            <br/>
-            <b>WSDM'19</b>, Demo, 2019
-          </p>
+          <h3 class="resume-item-title" itemprop="name"> International <img src = "images/icons8-globe-50.png"
+         alt = "Glabal" width= "20px" height="20px"/></h3>
+          <ul class="resume-item-list">
+            <li>
+              <p class="resume-item-details">
+                <i><a href="http://doi.org/10.1109/ACCESS.2019.2949076">Efficient Semantic Segmentation Using Spatio-Channel Dilated Convolutions</a></i>
+                <br/>
+                <b><u>Jaeseon Kim</u></b>, Yong Seok Heo
+                <br/>
+                <b>IEEE Access</b>, vol. 7, pp. 154239-154252, 2019. <a href="images/papers/ACCESS/JSK_IEEE_ACCESS_paper.pdf"><u>[pdf]</u></a>
+                <br/>
+                <details>
+                  <summary><u>See more</u></summary>
+                  <div markdown="1">
+                    <!-- Slideshow container -->
+                    <div class="slideshow-container">
+                        <!-- Full-width images with number and caption text -->
+                        <div class="myPaper1 fade first" >
+                            <div class="numbertext">1 / 6</div>
+                            <img src = "images/papers/ACCESS/figure1.png" style="width:100%">
+                        </div>
+                        <div class="myPaper1 fade" >
+                            <div class="numbertext">2 / 6</div>
+                            <img src = "images/papers/ACCESS/figure2.png" style="width:100%">
+                        </div>
+                        <div class="myPaper1 fade" >
+                            <div class="numbertext">3 / 6</div>
+                            <img src = "images/papers/ACCESS/figure3.png" style="width:100%">
+                        </div>
+                        <div class="myPaper1 fade" >
+                            <div class="numbertext">4 / 6</div>
+                            <img src = "images/papers/ACCESS/figure4.png" style="width:100%">
+                        </div>
+                        <div class="myPaper1 fade" >
+                            <div class="numbertext">5 / 6</div>
+                            <img src = "images/papers/ACCESS/figure5.png" style="width:100%">
+                        </div>
+                        <div class="myPaper1 fade" >
+                            <div class="numbertext">6 / 6</div>
+                            <img src = "images/papers/ACCESS/figure6.png" style="width:100%">
+                        </div>
+                        <!-- Next and previous buttons -->
+                        <!--<a class="prev" onclick="plusPaper1Slides(-1)">&#10094;</a>-->
+                        <!--<a class="next" onclick="plusPaper1Slides(1)">&#10095;</a>-->
+                    </div>
+                    <br>
+                    <!-- The dots/circles -->
+                    <div style="text-align:center">
+                        <span class="dot myPaper1-dot" onclick="currentPaper1Slide(1)"></span>
+                        <span class="dot myPaper1-dot" onclick="currentPaper1Slide(2)"></span>
+                        <span class="dot myPaper1-dot" onclick="currentPaper1Slide(3)"></span>
+                        <span class="dot myPaper1-dot" onclick="currentPaper1Slide(4)"></span>
+                        <span class="dot myPaper1-dot" onclick="currentPaper1Slide(5)"></span>
+                        <span class="dot myPaper1-dot" onclick="currentPaper1Slide(6)"></span>
+                    </div>
+                  </div>
+                </details>
+              </p>
+            </li>
+          </ul>
+        </div>
 
+        <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
+          <h3 class="resume-item-title" itemprop="name"> Domestic <img src = "images/icons8-south-korea-96.png"
+         alt = "Suwon" width= "20px" height="20px"/></h3>
+          <ul class="resume-item-list">
+            <li>
+              <p class="resume-item-details">
+                <!-- <i>Accuracy Improvement of Semantic Segmentation Network Using Boundary Detection</i> -->
+                <i>경계 검출을 이용한 의미론적 영역 분할 네트워크의 정확도 향상</i>
+                <br/>
+                <b><u>Jaeseon Kim</u></b>, Yong Seok Heo
+                <br/>
+                <b>Workshop on Image Processing and Image Understanding (IPIU)</b>, Jeju, 2020. <a href="images/papers/IPIU/JSK_IPIU_paper.pdf"><u>[pdf]</u></a>
+                <br/>
+                <details>
+                  <summary><u>See more</u></summary>
+                  <div markdown="1">
+                    <!-- Slideshow container -->
+                    <div class="slideshow-container">
+                        <!-- Full-width images with number and caption text -->
+                        <div class="myPaper2 fade first" >
+                            <div class="numbertext">1 / 4</div>
+                            <img src = "images/papers/IPIU/figure1.png" style="width:100%">
+                        </div>
+                        <div class="myPaper2 fade" >
+                            <div class="numbertext">2 / 4</div>
+                            <img src = "images/papers/IPIU/figure2.png" style="width:100%">
+                        </div>
+                        <div class="myPaper2 fade" >
+                            <div class="numbertext">3 / 4</div>
+                            <img src = "images/papers/IPIU/figure3.png" style="width:100%">
+                        </div>
+                        <div class="myPaper2 fade" >
+                            <div class="numbertext">4 / 4</div>
+                            <img src = "images/papers/IPIU/figure4.png" style="width:100%">
+                        </div>
+                        <!-- Next and previous buttons -->
+                        <!--<a class="prev" onclick="plusPaper2Slides(-1)">&#10094;</a>-->
+                        <!--<a class="next" onclick="plusPaper2Slides(1)">&#10095;</a>-->
+                    </div>
+                    <br>
+                    <!-- The dots/circles -->
+                    <div style="text-align:center">
+                        <span class="dot myPaper2-dot" onclick="currentPaper2Slide(1)"></span>
+                        <span class="dot myPaper2-dot" onclick="currentPaper2Slide(2)"></span>
+                        <span class="dot myPaper2-dot" onclick="currentPaper2Slide(3)"></span>
+                        <span class="dot myPaper2-dot" onclick="currentPaper2Slide(4)"></span>
+                    </div>
+                  </div>
+                </details>
+              </p>
+            </li>
+
+            <li>
+              <p class="resume-item-details">
+                <i><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07615406&language=ko_KR">딥러닝을 이용한 위성 영상의 의미 정보 추출 기법 동향 분석</a></i>
+                <br/>
+                <b><u>Jaeseon Kim</u></b>, Yong Seok Heo
+                <br/>
+                <b>정보와 통신 열린강좌</b>, 35(2(별책8호)), 3-9, 2018. <a href="images/papers/KICS/JSK_KICS_paper.pdf"><u>[pdf]</u></a>
+              </p>
+            </li>
+          </ul>
         </div>
 
       </section>
-      <!-- end Experience -->
+      <!-- end Publications -->
       {% endif %}
+
+
 
       {% if site.resume_section_projects %}
       <!-- begin Projects -->
       <section class="content-section">
 
         <header class="section-header">
-          <h2>Projects</h2>
+          <h2>Research Projects</h2>
         </header>
 
         <div class="resume-item">
-          <h3 class="resume-item-title">NTP Pool Project</h3>
-          <h4 class="resume-item-details">NTP Server Operator</h4>
-          <p class="resume-item-copy">The <a href="http://www.pool.ntp.org/en/">NTP Pool Project</a> is the largest organization of NTP servers in the world and is used by millions of systems worldwide.  To give back to the NTP Pool community I donate a <a href="http://www.pool.ntp.org/scores/52.37.145.131">server</a> that is apart of the NTP Pool.  I also created a <a href="https://github.com/aboutte/ntppool_deployment">turn key solution</a> for deploying a NTP server in AWS.</p>
+          <h3 class="resume-item-title"><a href="https://www.nrf.re.kr/index">NRF <img src = "images/icons8-south-korea-96.png"
+         alt = "Daejeon" width= "20px" height="20px"/></a></h3>
+          <h4 class="resume-item-details">Semantic 3D Information Estimation Fusing Street-view Images and Aerial Images</h4>
+          <h5 class="resume-item-details">Mar 2019 &mdash; present  </h5>
+          <p class="resume-item-details">
+            The project to develop an algorithm, which is to estimate precise semantic 3D information by merging different characteristics and information of the street side-view images and top-view images.
+          </p>
+          <p class="resume-item-details">
+            <b>What I did : </b>
+            <br/>
+            <ul class="resume-item-list">
+            <li>
+              Developed an algorithm to extract semantic information from street side-view images using deep learning framework.
+            </li>
+            <li>
+              Conducted research about accuracy improvement of semantic segmentation network using boundary detection. (Domestic paper)
+            </li>
+            <li>Python, PyTorch</li>
+
+          <details>
+            <summary><u>See more</u></summary>
+            <div markdown="1">
+              <!-- Slideshow container -->
+              <div class="slideshow-container">
+                  <!-- Full-width images with number and caption text -->
+                  <div class="myProject1 fade first" >
+                      <div class="numbertext">1 / 5</div>
+                      <img src = "images/project_1/figure1.png" style="width:100%">
+                  </div>
+                  <div class="myProject1 fade" >
+                      <div class="numbertext">2 / 5</div>
+                      <img src="images/project_1/figure2.png" style="width:100%">
+                  </div>
+                  <div class="myProject1 fade">
+                      <div class="numbertext">3 / 5</div>
+                      <img src="images/project_1/figure3.png" style="width:100%">
+                  </div>
+                  <div class="myProject1 fade">
+                      <div class="numbertext">4 / 5</div>
+                      <img src="images/project_1/figure4.png" style="width:100%">
+                  </div>
+                  <div class="myProject1 fade">
+                      <div class="numbertext">5 / 5</div>
+                      <img src="images/project_1/figure5.png" style="width:100%">
+                  </div>
+                  <!-- Next and previous buttons -->
+                  <!--<a class="prev" onclick="plusProject1Slides(-1)">&#10094;</a>-->
+                  <!--<a class="next" onclick="plusProject1Slides(1)">&#10095;</a>-->
+              </div>
+              <br>
+              <!-- The dots/circles -->
+              <div style="text-align:center">
+                  <span class="dot myProject1-dot" onclick="currentProject1Slide(1)"></span>
+                  <span class="dot myProject1-dot" onclick="currentProject1Slide(2)"></span>
+                  <span class="dot myProject1-dot" onclick="currentProject1Slide(3)"></span>
+                  <span class="dot myProject1-dot" onclick="currentProject1Slide(4)"></span>
+                  <span class="dot myProject1-dot" onclick="currentProject1Slide(5)"></span>
+              </div>
+            </div>
+          </details>
+
+        </ul>
+          </p>
         </div>
 
-        <!--<div class="resume-item">-->
-          <!--<h3 class="resume-item-title">Ghost Media Upload</h3>-->
-          <!--<h4 class="resume-item-details">Open source pipeline for upload media to Ghost blog</h4>-->
-          <!--<p class="resume-item-copy">With the current version of Ghost it is not an easy task to upload images, and it is even more difficult to upload videos.  This <a href="https://github.com/aboutte/ghost_media_upload">project</a> streamlines the process using a pipeline for uploading images and video while also converting video files to optimize them for web streaming using ffmpeg.</p>-->
-        <!--</div>-->
+        <div class="resume-item">
+          <h3 class="resume-item-title"><a href="https://www.iitp.kr/main.it">IITP <img src = "images/icons8-south-korea-96.png"
+         alt = "Daejeon" width= "20px" height="20px"/></a></h3>
+          <h4 class="resume-item-details">Development of Satellite Information Processing and Convergence Application Service</h4>
+          <h5 class="resume-item-details">Jun 2018 &mdash; present  </h5>
+          <p class="resume-item-details">
+            The project involving various universities, research institutes and companies to develop ICT element technology for customized satellite information convergence services.
+          </p>
+          <p class="resume-item-details">
+            <b>What I did : </b>
+            <ul class="resume-item-list">
+            <li>
+              Developed the deep learning based feature extraction technique considering the characteristics of satellite images.
+            </li>
+            <li>
+              Conducted a study on the feature extraction techniques of satellite images, which have many crowded small object instances.
+            </li>
+            <li>
+              Conducted survey and analysis of deep learning based techniques for extracting semantic information from satellite images. (Domestic paper)
+            </li>
+            <li>
+              Proposed an efficient network for semantic segmentation. (IEEE Access paper)
+            </li>
+            <li>Python, PyTorch</li>
 
-        <!--<div class="resume-item">-->
-          <!--<h3 class="resume-item-title">Ruby CloudFormation VPC</h3>-->
-            <!--<h4 class="resume-item-details">Open source CloudFormation template for creating VPCs &bull; 2017 &mdash; Present</h4>-->
-            <!--<p class="resume-item-copy">https://github.com/aboutte/</p>-->
-        <!--</div>-->
+            <details>
+            <summary><u>See more</u></summary>
+            <div markdown="1">
+              <!-- Slideshow container -->
+              <div class="slideshow-container">
+                  <!-- Full-width images with number and caption text -->
+                  <div class="myProject2 fade first" >
+                      <div class="numbertext">1 / 4</div>
+                      <img src = "images/project_2/figure1.png" style="width:100%">
+                  </div>
+                  <div class="myProject2 fade" >
+                      <div class="numbertext">2 / 4</div>
+                      <img src="images/project_2/figure2.png" style="width:100%">
+                  </div>
+                  <div class="myProject2 fade first" >
+                      <div class="numbertext">3 / 4</div>
+                      <img src = "images/project_2/figure3.png" style="width:100%">
+                  </div>
+                  <div class="myProject2 fade" >
+                      <div class="numbertext">4 / 4</div>
+                      <img src="images/project_2/figure4.png" style="width:100%">
+                  </div>
+                  <!-- Next and previous buttons -->
+                  <!--<a class="prev" onclick="plusProject2Slides(-1)">&#10094;</a>-->
+                  <!--<a class="next" onclick="plusProject2Slides(1)">&#10095;</a>-->
+              </div>
+              <br>
+              <!-- The dots/circles -->
+              <div style="text-align:center">
+                  <span class="dot myProject2-dot" onclick="currentProject2Slide(1)"></span>
+                  <span class="dot myProject2-dot" onclick="currentProject2Slide(2)"></span>
+                  <span class="dot myProject2-dot" onclick="currentProject2Slide(3)"></span>
+                  <span class="dot myProject2-dot" onclick="currentProject2Slide(4)"></span>
+              </div>
+            </div>
+          </details>
+          </ul>
+          </p>
+        </div>
 
-        <!--<div class="resume-item">-->
-          <!--<h3 class="resume-item-title">Mcrouter</h3>-->
-          <!--<h4 class="resume-item-details">This is the solution I used at Shopatron</h4>-->
-          <!--<p class="resume-item-copy"></p>-->
-        <!--</div>-->
+        <div class="resume-item">
+          <h3 class="resume-item-title"><a href="https://www.samsung.com/sec/">Samsung Electronics <img src = "images/icons8-south-korea-96.png"
+         alt = "Suwon" width= "20px" height="20px"/></a></h3>
+          <h4 class="resume-item-details">Development of precise semantic map extraction engine based on deep learning</h4>
+          <h5 class="resume-item-details">May 2018 &mdash; Aug 2019  </h5>
+          <p class="resume-item-details">
+            The project to develop an algorithm, which is to find 3D location information of trees in a top-view image.
+          </p>
+          <p class="resume-item-details">
+            <b>What I did : </b>
+            <ul class="resume-item-list">
+            <li>
+              Designed an efficient deep learning network for semantic segmentation in top-view images and street side-view images.
+            </li>
+            <li>
+              Implemented the semantic segmentation network, which detects building, tree in top-view images and street side-view images, using deep learning framework.
+            </li>
+            <li>
+              Proposed an efficient network for semantic segmentation in street scenes. (IEEE Access paper)
+            </li>
+            <li>Python, PyTorch</li>
+
+            <details>
+            <summary><u>See more</u></summary>
+            <div markdown="1">
+              <!-- Slideshow container -->
+              <div class="slideshow-container">
+                  <!-- Full-width images with number and caption text -->
+                  <div class="myProject3 fade first" >
+                      <div class="numbertext">1 / 4</div>
+                      <img src = "images/project_3/figure1.png" style="width:100%">
+                  </div>
+                  <div class="myProject3 fade" >
+                      <div class="numbertext">2 / 4</div>
+                      <img src="images/project_3/figure2.png" style="width:100%">
+                  </div>
+                  <div class="myProject3 fade">
+                      <div class="numbertext">3 / 4</div>
+                      <img src="images/project_3/figure3.png" style="width:100%">
+                  </div>
+                  <div class="myProject3 fade">
+                      <div class="numbertext">4 / 4</div>
+                      <img src="images/project_3/figure4.png" style="width:100%">
+                  </div>
+                  <!-- Next and previous buttons -->
+                  <!--<a class="prev" onclick="plusProject3Slides(-1)">&#10094;</a>-->
+                  <!--<a class="next" onclick="plusProject3Slides(1)">&#10095;</a>-->
+              </div>
+              <br>
+              <!-- The dots/circles -->
+              <div style="text-align:center">
+                  <span class="dot myProject3-dot" onclick="currentProject3Slide(1)"></span>
+                  <span class="dot myProject3-dot" onclick="currentProject3Slide(2)"></span>
+                  <span class="dot myProject3-dot" onclick="currentProject3Slide(3)"></span>
+                  <span class="dot myProject3-dot" onclick="currentProject3Slide(4)"></span>
+              </div>
+            </div>
+          </details>
+
+          </ul>
+          </p>
+        </div>
+
+        <div class="resume-item">
+          <h3 class="resume-item-title"><a href="https://www.mobis.co.kr/main/index.do">Hyundai Mobis <img src = "images/icons8-south-korea-96.png"
+         alt = "Seoul" width= "20px" height="20px"/></a></h3>
+          <h4 class="resume-item-details">Development of ISP Algorithm for Recognition Camera</h4>
+          <h5 class="resume-item-details">May 2018 &mdash; Dec 2018  </h5>
+          <p class="resume-item-details">
+            The project to develop an ISP algorithm for securing ISP technology.
+          </p>
+          <p class="resume-item-details">
+            <b>What I did : </b>
+            <ul class="resume-item-list">
+            <li>
+              Implemented the deep learning based algorithm to demosaic raw image from RCCB CFA(color filter array) image sensor.
+            </li>
+            <li>
+              Developed a demosaic network using deep learning framework to reconstruct a full color image from the incomplete color samples from an image sensor with RCCB CFA.
+            </li>
+            <li>Python, TensorFlow</li>
+            <details>
+            <summary><u>See more</u></summary>
+            <div markdown="1">
+              <!-- Slideshow container -->
+              <div class="slideshow-container">
+                  <!-- Full-width images with number and caption text -->
+                  <div class="myProject4 fade first" >
+                      <div class="numbertext">1 / 4</div>
+                      <img src = "images/project_4/figure1.png" style="width:100%">
+                  </div>
+                  <div class="myProject4 fade" >
+                      <div class="numbertext">2 / 4</div>
+                      <img src="images/project_4/figure2.png" style="width:100%">
+                  </div>
+                  <div class="myProject4 fade" >
+                      <div class="numbertext">3 / 4</div>
+                      <img src="images/project_4/figure3.png" style="width:100%">
+                  </div>
+                  <div class="myProject4 fade" >
+                      <div class="numbertext">4 / 4</div>
+                      <img src="images/project_4/figure4.png" style="width:100%">
+                  </div>
+                  <!-- Next and previous buttons -->
+                  <!--<a class="prev" onclick="plusProject4Slides(-1)">&#10094;</a>-->
+                  <!--<a class="next" onclick="plusProject4Slides(1)">&#10095;</a>-->
+              </div>
+              <br>
+              <!-- The dots/circles -->
+              <div style="text-align:center">
+                  <span class="dot myProject4-dot" onclick="currentProject4Slide(1)"></span>
+                  <span class="dot myProject4-dot" onclick="currentProject4Slide(2)"></span>
+                  <span class="dot myProject4-dot" onclick="currentProject4Slide(3)"></span>
+                  <span class="dot myProject4-dot" onclick="currentProject4Slide(4)"></span>
+              </div>
+            </div>
+          </details>
+          </ul>
+          </p>
+        </div>
 
 
       </section>
       <!-- end Projects -->
+      {% endif %}
+
+      {% if site.resume_section_teaching_experience %}
+      <!-- begin Teaching Experience -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2>Teaching Experience</h2>
+        </header>
+
+        <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
+          <h3 class="resume-item-title" itemprop="name"><a href="https://research.samsung.com">Samsung Electronics <img src = "images/icons8-south-korea-96.png"
+         alt = "Suwon" width= "20px" height="20px"/></a></h3>
+          <h4 class="resume-item-details">AI Academy SR</h4>
+          <h5 class="resume-item-details">Teaching Assistant &bull; Jan 2020  </h5>
+          <!--<p class="resume-item-details">Teaching Assistant &bull; Jan 2020</p>-->
+          <ul class="resume-item-list">
+            <li>Assisted professor with helping Samsung researchers learn deep learning based semantic segmentation. </li>
+            <li>Python, PyTorch, Linux</li>
+          </ul>
+        </div>
+
+        <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
+          <h3 class="resume-item-title" itemprop="name"><a href="http://www.ajou.ac.kr/main/index.jsp">Ajou University <img src = "images/icons8-south-korea-96.png"
+         alt = "Suwon" width= "20px" height="20px"/></a></h3>
+          <h4 class="resume-item-details">Data Structure and Algorithm Lecture</h4>
+          <h5 class="resume-item-details">Teaching Assistant &bull; Sep 2018 - Dec 2018  </h5>
+          <!--<p class="resume-item-details">Teaching Assistant &bull; Sep 2018 - Dec 2018</p>-->
+          <ul class="resume-item-list">
+            <li>Assisted professor with helping students learn data structure and algorithm. </li>
+            <li>C, Visual Studio</li>
+          </ul>
+        </div>
+
+      </section>
+      <!-- end Teaching Experience -->
       {% endif %}
 
       {% if site.resume_section_skills %}
@@ -261,22 +537,12 @@
 
         <div class="resume-item">
           <h4 class="skills-resume-item-details">Programming Languages (ordered by fluency)</h4>
-          <p class="resume-item-copy">Java, Python, PHP, JavaScript, TypeScript, C#, R, MATLAB, Bash, Haskell</p>
+          <p class="resume-item-copy">Python, C/C++, MATLAB, Java</p>
         </div>
 
         <div class="resume-item">
           <h4 class="skills-resume-item-details">Frameworks and Libraries</h4>
-          <p class="resume-item-copy">PSpring, Stanford Core NLP, Semafor, SciKit, TensorFlow, NetworkX, NLTK, Django, NumPy,  WordPress, Drupal, Yii2, Angular.js, D3.js, jQuery, .NET</p>
-        </div>
-
-        <div class="resume-item">
-          <h4 class="skills-resume-item-details">Databases</h4>
-          <p class="resume-item-copy">Microsoft SQL Server, Oracle database, IBM DB2, ElasticSearch, NoSQL databases (e.g. MongoDB), MySQL, PostgreSQL</p>
-        </div>
-
-        <div class="resume-item">
-          <h4 class="skills-resume-item-details">Code Management Software</h4>
-          <p class="resume-item-copy">Git, Maven, TortoiseSVN, Bitbucket</p>
+          <p class="resume-item-copy">PyTorch, TensorFlow, NumPy, OpenCV</p>
         </div>
 
       </section>
@@ -288,30 +554,24 @@
       <section class="content-section">
 
         <header class="section-header">
-          <h2>Recognition</h2>
+          <h2>Honors & Awards</h2>
         </header>
-
-        <div class="resume-item">
-          <h3 class="resume-item-title" itemprop="award"> Association for Computational Linguistics (ACL) conference travel grant </h3>
-          <h4 class="resume-item-details">2018</h4>
-          <p class="resume-item-copy">Funded by the ANU to assist in attending the ACL conference.</p>
+          <div class="resume-item">
+          <h3 class="resume-item-title" itemprop="name"><a href="http://www.hyundai-cmkfoundation.org/com/esScholarship.do">Hyundai Motor Chung Mong-Koo Foundation <img src = "images/icons8-south-korea-96.png"
+         alt = "Seoul" width= "20px" height="20px"/></a></h3>
+          <h4 class="resume-item-details" itemprop="award"> Global Leader Award &bull; Dec 2019 </h4>
+          <p class="resume-item-copy"> Given to scholarship students who achieved outstanding achievements in the world by Hyundai Motor Chung Mong-Koo Foundation.
+              <a href="https://www.mk.co.kr/news/business/view/2019/12/1099692/"><u>[article]</u></a>
+          </p>
         </div>
 
         <div class="resume-item">
-          <h3 class="resume-item-title" itemprop="award"> ANU Summer Research Scholarship </h3>
-          <h4 class="resume-item-details">2017</h4>
+          <h3 class="resume-item-title" itemprop="name"><a href="http://www.hyundai-cmkfoundation.org/com/esScholarship.do">Hyundai Motor Chung Mong-Koo Foundation <img src = "images/icons8-south-korea-96.png"
+         alt = "Seoul" width= "20px" height="20px"/></a></h3>
+          <h4 class="resume-item-details"> Scholarship Program &bull; Jul 2019 - present</h4>
+          <p class="resume-item-copy">Funded to outstanding graduate students majoring in science and engineering by Hyundai Motor Chung Mong-Koo Foundation.</p>
         </div>
 
-        <div class="resume-item">
-          <h3 class="resume-item-title" itemprop="award"> ANU Chancellor's Letters of Commendation </h3>
-          <h4 class="resume-item-details">2013</h4>
-          <p class="resume-item-copy">Given to students who achieved GPA at a High Distinction (7) level.</p>
-        </div>
-
-        <div class="resume-item">
-          <h3 class="resume-item-title" itemprop="award"> NICTA Research Scholarship </h3>
-          <h4 class="resume-item-details">2013</h4>
-        </div>
 
       </section>
       <!-- end Recognition -->
@@ -324,43 +584,6 @@
         <header class="section-header">
           <h2>Certifications</h2>
         </header>
-
-                <div class="resume-item">
-          <h3 class="resume-item-title">AWS Certified Cloud Practitioner</h3>
-          <!--<h4 class="resume-item-details"></h4>-->
-          <p class="resume-item-copy">K78SD4Y21MEE1ZWC &bull; Aug 31, 2018 - Aug 31, 2020</p>
-        </div>
-
-              <div class="resume-item">
-          <h3 class="resume-item-title">AWS Solutions Architect – Associate</h3>
-          <!--<h4 class="resume-item-details"></h4>-->
-          <p class="resume-item-copy">CJZ71YL2CBBE1BKS &bull; Aug 01, 2016 - March 16, 2019</p>
-        </div>
-
-        <div class="resume-item">
-          <h3 class="resume-item-title">AWS Certified SysOps Administrator - Associate</h3>
-          <!--<h4 class="resume-item-details"></h4>-->
-          <p class="resume-item-copy">JT501NJCC214QNW0 &bull; Nov 29, 2016 - Oct 26, 2020</p>
-        </div>
-
-        <div class="resume-item">
-          <h3 class="resume-item-title">AWS Certified Solutions Architect - Professional</h3>
-          <!--<h4 class="resume-item-details"></h4>-->
-          <p class="resume-item-copy">2ZSV18Z2C2QE1K55 &bull; March 16, 2017 - March 16, 2019</p>
-        </div>
-
-        <div class="resume-item">
-          <h3 class="resume-item-title">AWS Certified DevOps Engineer - Professional</h3>
-          <!--<h4 class="resume-item-details"></h4>-->
-          <p class="resume-item-copy">N0JFWJPC1ERQ1297 &bull; Oct 26, 2018 - Oct 26, 2020</p>
-        </div>
-
-        <div class="resume-item">
-          <h3 class="resume-item-title">AWS Certified Advanced Networking - Specialty</h3>
-          <!--<h4 class="resume-item-details"></h4>-->
-          <p class="resume-item-copy">NSCTGSYKDJ1QQ7S6 &bull; Feb 22, 2019 - Feb 22, 2021</p>
-        </div>
-
       </section>
       <!-- end Associations -->
       {% endif %}
@@ -369,43 +592,13 @@
       <!-- begin Education -->
       <section class="content-section">
 
-        <header class="section-header">
-          <h2>Online Coursework</h2>
-        </header>
-
-        <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
-          <h3 class="resume-item-title" itemprop="name">TAFE Digital </h3>
-          <h4 class="resume-item-details" itemprop="description"> Certificate IV in Property Services (Real Estate) &bull; 2019 &mdash; 2020 </h4>
-          <p class="resume-item-copy"> To further my knowledge in real estate. </p>
-        </div>
-
-        <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
-          <h3 class="resume-item-title" itemprop="name">Coursera </h3>
-          <h4 class="resume-item-details" itemprop="description"> Machine Learning, Neural Networks and Deep Learning &bull; 2017, 2019 </h4>
-        </div>
-
-        <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
-          <h3 class="resume-item-title" itemprop="name">Udacity </h3>
-          <h4 class="resume-item-details" itemprop="description"> Data Analyst, Android Basics &bull; 2016 </h4>
-        </div>
-              </section>
+        </section>
       <!-- end Education -->
       {% endif %}
 
       {% if site.resume_section_links %}
       <!-- begin Links -->
       <section class="content-section">
-
-        <header class="section-header">
-          <h2>Additional Links</h2>
-        </header>
-
-        <div class="resume-item">
-          <ul class="resume-item-list">
-            <li><a href="#">Springfield Poker Club</a></li>
-            <li><a href="#">Springfield Donut Eater's User Group</a></li>
-          </ul>
-        </div>
 
       </section>
       <!-- end Links -->
